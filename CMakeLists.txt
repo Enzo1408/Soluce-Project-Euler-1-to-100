@@ -8,3 +8,5 @@ project (Project_Euler)
 set(CMAKE_C_FLAGS "-std=c99 -g -Wall")
 
 add_executable(project function1_100.c)
+
+target_link_libraries(project PRIVATE m)

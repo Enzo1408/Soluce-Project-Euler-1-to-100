@@ -52,14 +52,12 @@ int func4(void){
     for (int i = 999; i >= 100; i--){
         for (int j = 999; j >= 100; j--){
             pal = i * j;
-            //printf("%d\n", pal);
             temp = pal;
             while (temp != 0) {
                 rem = temp%10;
                 reverse = reverse*10+rem;
                 temp/=10;
             }
-            //printf("%ld\n", reverse);
             if (pal == reverse){
                 if (maxpal < pal){
                     maxpal = pal;
@@ -99,14 +97,36 @@ int func6(int x) {
     return squareofthesum - sumofsquares;
 }
 
+long int func7(int x){
+    int count = 1;      // Nombre de nb premier
+    int temp = 3;       // On commence à 3
+    bool flag = false;
+    while (!flag){
+        for (int i = 2; i < temp; i++){
+            if (temp%i==0){
+               break;
+            }
+            if (i == temp-1){
+                count ++;
+            }
+            if (count == x){
+                return temp;
+            }
+        }
+        temp ++;
+    }
+    return 0;
+}
+
 
 
 int main(void){
     //printf("La somme des multiples de 3 et 5 jusqu'à 1000 = %d\n", func1(1000));
     //printf("Jusqu'a %d le evenFib = %ld\n", 4000000, func2(4000000));
     //printf("Le plus grand facteur commun de %ld = %d\n", 600851475143 , func3(600851475143 ));
-    printf("Le plus grand palindrome entre le produit de 2 nb a 3 chiffres = %d\n", func4());
+    //printf("Le plus grand palindrome entre le produit de 2 nb a 3 chiffres = %d\n", func4());
     //printf("La difference entre la somme des carrés et le carré de la somme des nb entre 1 et %d = %d \n", 100, func6(100));
     //printf("Le plus petit nombre positif divisible par tous les nombres de 1 à %d = %d\n", 20, func5(20));
+    //printf("Le %dème chiffre premier = %ld\n", 10, func7(10));
     return EXIT_SUCCESS;
 }

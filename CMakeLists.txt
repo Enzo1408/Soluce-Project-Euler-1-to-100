@@ -1,11 +1,7 @@
-#version minimale de cmake nécessaire
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.10)
 
-#nom du projet
-project (Project_Euler)
-
-#positionne la variable
-set(CMAKE_C_FLAGS "-std=c99 -g -Wall")
+# set the project name
+project(Project_Euler)
 
 add_executable(project function1_100.c)
 

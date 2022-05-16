@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/enzo/travail/personal-project/projectEuler/function1_100.c
+/home/enzo/travail/projectEuler/Soluce-Project-Euler-1-to-100/function1_100.c
 stdio.h
 -
 stdlib.h
@@ -14,5 +14,9 @@ stdlib.h
 math.h
 -
 stdbool.h
+-
+string.h
+-
+stdint.h
 -
 

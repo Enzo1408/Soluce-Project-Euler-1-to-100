@@ -159,8 +159,8 @@ char *number = "73167176531330624919225119674426574742355349194934" \
 long int func9(int x){
     int a, b, truncate;
     double c;
-    for (a = 0; a < x/2; a++){
-        for (b = 0; b < x/2; b++){
+    for (a = 1; a < x; a++){
+        for (b = 1; b < x; b++){
             c = (b*b) + (a*a);
             c = sqrt(c);
             truncate = (int)c;
@@ -170,12 +170,29 @@ long int func9(int x){
                     return a*b*c;
                 }
             }
-            
         }
     }
+    printf("Aucune solution trouvée ... \n");
     return 0;
 }
 
+long int func10(long int x){
+    int result = 0;
+    int temp = 1;
+    bool flag = false;
+    while (!flag){
+        for (int i = 0; i < x; i++){
+            if (temp%i == 0){
+                break;
+            }
+            if (i == temp - 1){
+                result = result + temp;
+            }
+        }
+        temp ++;
+    }
+    return result;
+}
 
 int main(void){
     //printf("La somme des multiples de 3 et 5 jusqu'à 1000 = %d\n", func1(1000));
@@ -186,6 +203,8 @@ int main(void){
     //printf("Le plus petit nombre positif divisible par tous les nombres de 1 à %d = %d\n", 20, func5(20));
     //printf("Le %dème chiffre premier = %ld\n", 500, func7(500));
     //printf("Les %d chiffres adjacents du nombre à 1000 chiffres qui ont le plus grand produit = %ld\n", 4,  func8(13));
-    printf("Sont le triplet de Pythagore pour lequel a+b+c = %d et a*b*c = %ld\n", 1000, func9(1000));
+    //printf("%ld\n", func9(1000));
+    printf("%ld", func10(10));
+
     return EXIT_SUCCESS;
 }

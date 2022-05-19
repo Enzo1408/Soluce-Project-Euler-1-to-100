@@ -1,6 +1,6 @@
-Implémentation des problèmes du "Project Euler" en C
+Implémentation des problèmes du *Project Euler* en C
 
-Pour compiler :
+#titre Pour compiler :
 
     - Créer un sous répertoire build ("mkdir build")
     - Aller dans le répertoire build ("cd build")

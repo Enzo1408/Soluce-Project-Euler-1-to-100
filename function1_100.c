@@ -404,26 +404,41 @@ int func13 (int x){ // Parametre correpondant au nb de chiffre de la somme à af
                     "72107838435069186155435662884062257473692284509516"
                     "20849603980134001723930671666823555245252804609722"
                     "53503534226472524250874054075591789781264330331690";
-    int *tab = malloc(5000 * sizeof(int));
-    for (int i = 0; i < 5000; i++){
+    int *tab = malloc(5000 * sizeof(int)); // Allocation mémoire pour 5000 int car il y a 100 lignes de 50 chiffres
+    for (int i = 0; i < 5000; i++){ // Convertion du tableau de char en tableau de int
         tab[i] = (numbers[i] - '0');
         if (i%50 == 0){
-            //printf("\n");
         }
-        //printf("%d", tab[i]);
     }
-    printf("%d, %d, %d", tab[50], tab[49], tab[98]);
     int retenue = 0;
-    int result, finalresult;
-    /* while(1){
-        for (int y = 50; y >= 0; y--){
-            for (int i = 1; i < 100; i++){
-                result = result + tab[i*y];
+    long int result = 0;
+    char finalresult[10];
+    bool flag = false;
+    while(!flag){
+        for (int y = 49; y >= 0; y--){
+            for (int i = 0; i < 100; i++){
+                result = result + tab[i*50 + y]; // Somme de tous les éléments par colonne
             }
+            result = result + retenue;
             retenue = (int)result/10;
+            if (y <= 7){  // Afficher les 8 premiers chiffres des 10 premiers de la somme entière
+                finalresult[y + 2] = (result%10 + '0'); 
+            }
+            if (y == 0){ // Ajouter la retenu a finalresult
+                for (int i = 1; i >= 0; i-- ){
+                    finalresult[i] = (retenue%10 + '0');
+                    retenue = retenue/10;
+                }
+            }
+            result = 0;
+            if (y == 0){ // Arret de la boucle
+                flag = true;
+            }
         }
-    } */
+    }
+    printf("%s", finalresult);
     free(tab);
+    printf("\n");
     return 1;
 }
 

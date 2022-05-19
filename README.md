@@ -1,12 +1,15 @@
 Implémentation des problèmes du *Project Euler* en C
 
-#titre Pour compiler :
+<h1>Pour compiler :</h1>
 
-    - Créer un sous répertoire build ("mkdir build")
-    - Aller dans le répertoire build ("cd build")
-    - Compiler le fichier en tapant "cmake .." puis "./project" 
+    - mkdir build
+    - cd build
+    - cmake ..
+    - ./project
 
-Le répertoire possède deux fichiers :
+<h1>_Attention_ </h1>
 
-    - CmakeLists.txt : Pour compiler le projet.
-    - function1_100.c : Fichier C comprenant toutes les implémentations des fonctions.
+Dans le main du fichier C tous les appels de fonctions sont commentés !
+Vous devrez décommenter le problème que vous voulez pour voir la réponse dans le terminal après compilation.
+
+

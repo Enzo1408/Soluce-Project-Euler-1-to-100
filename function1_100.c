@@ -5,6 +5,16 @@
 #include <string.h>
 #include <stdint.h>
 
+/* FONCTION AUXILIAIRE */
+
+long long int factoriel (int x){
+    long int temp = 1;
+    for (int i = 1; i <= x; i++){
+        temp = temp * i;
+    }
+    return temp;
+}
+
 int func1(int x){
     int count = 0;
     for (int i = x-1; i > 0; i--){
@@ -303,7 +313,7 @@ long int func12(long int x){
     return 0;
 }
 
-int func13 (int x){ // Parametre correpondant au nb de chiffre de la somme à afficher en resultat
+void func13 (int x){ // Parametre correpondant au nb de chiffre de la somme à afficher en resultat
     char *numbers = "37107287533902102798797998220837590246510135740250"
                     "46376937677490009712648124896970078050417018260538"
                     "74324986199524741059474233309513058123726617309629"
@@ -439,8 +449,71 @@ int func13 (int x){ // Parametre correpondant au nb de chiffre de la somme à af
     printf("%s", finalresult);
     free(tab);
     printf("\n");
-    return 1;
 }
+
+int func14 (int x){
+    int count = 0;
+    int max = 0;
+    long int temp;
+    int tab[30];
+    int incr = 0;
+    bool find = false;
+    for (int i = 1; i < x; i++){
+        temp = i;
+        while (temp != 1){ 
+            find = false;
+            for (int y = 0; y < sizeof(tab)/sizeof(tab[0]); y += 2){
+                if (temp == tab[y]){
+                    count = count + tab[y+1];
+                    find = true;
+                    break;
+                }
+            }
+            if (find){
+                break;
+            }
+            if (temp % 2 == 0){
+                count++;
+                temp = temp/2;
+            }
+            else {
+                temp = temp*3 + 1;
+                count++;
+            }
+            printf("( %ld )", temp);
+            if (temp == 1){
+                tab[incr] = i;
+                tab[incr + 1] = count;
+                incr += 2;
+            }
+        }
+        if (count > max){
+            max = count;
+        }
+        count = 0;
+    }
+    for (int i = 0; i < 30; i++){
+        printf("%d \n", tab[i]);
+    }
+}
+
+long long int func15(int x){
+    unsigned long long tab[x+1][x+1];
+    tab[0][0] = 1;
+    for (int i = 0; i <= x; i++){
+        for(int j = 0; j <= x; j++){
+            tab[i][j] = 1;
+        }
+    }
+    for (int i = 1; i <= x; i++){
+        for(int j = 1; j <= x; j++){
+            tab[i][j] = tab[i-1][j] + tab[i][j-1];
+        }
+    }
+    return tab[x][x];
+}
+
+
 
 int main(void){
     //printf("1 - La somme des multiples de 3 et 5 jusqu'à 1000 = %d\n", func1(1000));
@@ -453,8 +526,10 @@ int main(void){
     //printf("8 - Les %d chiffres adjacents du nombre à 1000 chiffres qui ont le plus grand produit = %ld\n", 4,  func8(13));
     //printf("9 - Le produit du triplet de pythagore dont leur somme vaut %d = %ld\n", 1000, func9(1199));
     //printf("10 - La somme de tous les nombres premier jusqu'à %d = %ld\n", 2000000, func10(2000000));
-    //printf(11 - "Les %d chiffres adjacent possèdant le plus grand produits dans la grille = %ld\n", func11(4));
+    //printf("11 - Les %d chiffres adjacent possèdant le plus grand produits dans la grille = %ld\n", func11(4));
     //printf("12 - Le premier chiffre triangulaire possèdant %d diviseurs = %ld\n", 500, func12(500));
-    printf("%d\n",func13(10));
+    //printf("13 - Les 10 premiers chiffres de la somme totales de tous les nombres à 50 chiffres = %d\n",func13(10));
+    //printf("%d\n", func14(13));
+    //printf("%llu\n", func15(20));
     return EXIT_SUCCESS;
 }

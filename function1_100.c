@@ -530,6 +530,6 @@ int main(void){
     //printf("12 - Le premier chiffre triangulaire possèdant %d diviseurs = %ld\n", 500, func12(500));
     //printf("13 - Les 10 premiers chiffres de la somme totales de tous les nombres à 50 chiffres = %d\n",func13(10));
     //printf("%d\n", func14(13));
-    //printf("%llu\n", func15(20));
+    printf("%llu\n", func15(20));
     return EXIT_SUCCESS;
 }

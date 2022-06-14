@@ -14,15 +14,14 @@ Vous devrez décommenter le problème que vous voulez pour voir la réponse dans
 
 Certaines fonctions ne sont pas optimisés au maximum mais elles sont 100% fonctionnelles.
 
-Je vous déconseille de tout décommenter car votre PC risque de mettre très longtemps à trouver toutes les solutions.
+Je vous déconseille de tout décommenter car votre PC risquerai de mettre très longtemps à trouver toutes les solutions.
 
-<h3> Si votre PC rame </h3>
+<h3> Si votre PC rame ou freeze </h3>
 
-Faites :
-    - CTRL + C
+Faites : CTRL + C
 
 <h3>Options</h3>
 
-Tous les fonctions sont modulables elles permettent de tester toutes les possibilités de chacun des exercices de *Project Euler*.
-Elles répondent par défaut dans le terminal au problèmes mais vous pouvez changer les paramètres comme bon vous semble.
+Toutes les fonctions sont modulables et permettent de tester toutes les possibilités de chacun des exercices de *Project Euler*.
+Elles répondent par défaut aux problèmes mais vous pouvez changer les paramètres comme bon vous semble.
 

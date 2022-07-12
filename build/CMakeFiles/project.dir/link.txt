@@ -1,1 +1,0 @@
-/usr/bin/cc    CMakeFiles/project.dir/function1_100.c.o  -o project  -lm 

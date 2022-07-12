@@ -1,4 +1,4 @@
-Implémentation des problèmes du *Project Euler* en C de (1 - 100) :
+Implémentation de certains problèmes du *Project Euler* en C de (1 - 100) :
 
 <h1>Pour compiler :</h1>
 
